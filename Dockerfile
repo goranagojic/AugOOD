@@ -19,3 +19,4 @@ RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.75.0/source/boost_
 # build executable files in /home/build directory
 WORKDIR /home
 RUN mkdir build && cd build && cmake .. && make
+RUN mkdir sampleInput sampleOutput && mv sampleCode/boy.jpg sampleInput && rm -r sampleCode
