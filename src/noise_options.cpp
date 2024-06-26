@@ -1,7 +1,3 @@
-//
-// Created by gorana on 11.3.21..
-//
-
 #include "noise_options.h"
 
 #include <vector>

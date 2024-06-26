@@ -405,7 +405,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply gaussian blur on an image
             if (ropts.find_option(RunOption::GAUSS_UNI_BLUR)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_UNI_BLUR << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_UNI_BLUR << "..." << endl;
                 for(int k : blurKsizes){
                     GaussianBlur(img, dst, Size(k,k), 0.0);
                     params.clear();
@@ -419,7 +419,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
             // apply custom motion blur
             if (ropts.find_option(RunOption::MOT_BLUR_C)) {
                 string mod = RunOption::MOT_BLUR_C;
-                cout << "[processRequest] Generisem " << RunOption::MOT_BLUR_C << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::MOT_BLUR_C << "..." << endl;
                 for(int k : blurKsizes) {
                     int i = 0;
                     for (double a : aopts.get_angles()) {
@@ -438,7 +438,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
             // apply horizontal and vertical motion blur
             if (ropts.find_option(RunOption::MOT_BLUR_H)) {
                 string mod = RunOption::MOT_BLUR_H;
-                cout << "[processRequest] Generisem " << mod << "..." << endl;
+                cout << "[processRequest] Generating " << mod << "..." << endl;
                 for(int k : blurKsizes) {
                     filter2D(img, dst, -1, bkr.get(mod, k));
                     params.clear();
@@ -453,7 +453,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
             // apply horizontal and vertical motion blur
             if (ropts.find_option(RunOption::MOT_BLUR_V)) {
                 string mod = RunOption::MOT_BLUR_V;
-                cout << "[processRequest] Generisem " << mod << "..." << endl;
+                cout << "[processRequest] Generating " << mod << "..." << endl;
                 for(int k : blurKsizes) {
                     filter2D(img, dst, -1, bkr.get(mod, k));
                     params.clear();
@@ -467,7 +467,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
             vector<double> noiseDeviations = nopts.get_noise_deviations();
             // apply noise on the image, mono
             if (ropts.find_option(RunOption::GAUSS_NOISE_MONO)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE_MONO << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE_MONO << "..." << endl;
                 for(double sd : noiseDeviations){
                     lRGB[0].copyTo(ldst[0]);
                     lRGB[1].copyTo(ldst[1]);
@@ -487,7 +487,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply noise on all image channels
             if (ropts.find_option(RunOption::GAUSS_NOISE)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE << "..." << endl;
                 for(double sd : noiseDeviations){
                     lRGB[0].copyTo(ldst[0]);
                     lRGB[1].copyTo(ldst[1]);
@@ -509,7 +509,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply noise on the image's blue channel
             if (ropts.find_option(RunOption::GAUSS_NOISE_B)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE_B << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE_B << "..." << endl;
                 for(double sd : noiseDeviations){
                     lRGB[0].copyTo(ldst[0]);
                     lRGB[1].copyTo(ldst[1]);
@@ -527,7 +527,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply noise on the image's green channel
             if (ropts.find_option(RunOption::GAUSS_NOISE_G)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE_G << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE_G << "..." << endl;
                 for(double sd : noiseDeviations){
                     lRGB[0].copyTo(ldst[0]);
                     lRGB[1].copyTo(ldst[1]);
@@ -545,7 +545,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply noise on the image's red channel
             if (ropts.find_option(RunOption::GAUSS_NOISE_R)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE_R << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE_R << "..." << endl;
                 for(double sd : noiseDeviations){
                     lRGB[0].copyTo(ldst[0]);
                     lRGB[1].copyTo(ldst[1]);
@@ -563,7 +563,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply noise on the image in YUV colorspace
             if (ropts.find_option(RunOption::GAUSS_NOISE_YUV)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE_YUV << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE_YUV << "..." << endl;
                 for(double sd : noiseDeviations){
                     lYUV[0].copyTo(ldst[0]);
                     lYUV[1].copyTo(ldst[1]);
@@ -584,7 +584,7 @@ void processRequest(RequestList& rl, string& outputPath, bool useDatasets, bool 
 
             // apply noise on the image in frequent domain
             if (ropts.find_option(RunOption::GAUSS_NOISE_FREQ)) {
-                cout << "[processRequest] Generisem " << RunOption::GAUSS_NOISE_FREQ << "..." << endl;
+                cout << "[processRequest] Generating " << RunOption::GAUSS_NOISE_FREQ << "..." << endl;
                 for(double sd : noiseDeviations){
                     dct(lHD[0], ldstHD[0]);
                     dct(lHD[1], ldstHD[1]);
@@ -696,7 +696,7 @@ int main(int argc, char** argv){
     vector<double> noise_devs = vector<double>();
 
     //Options Parsing Part
-    po::options_description desc("Dozvoljene opcije programa");
+    po::options_description desc("Program options:");
     desc.add_options()
         ("help", "Prints this message.")
         ("threads", po::value<int>(&threads)->default_value(1),

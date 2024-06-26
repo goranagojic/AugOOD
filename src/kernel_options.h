@@ -1,7 +1,3 @@
-//
-// Created by gorana on 11.3.21..
-//
-
 #ifndef PICTUREMODIFIER_KERNEL_OPTIONS_H
 #define PICTUREMODIFIER_KERNEL_OPTIONS_H
 
