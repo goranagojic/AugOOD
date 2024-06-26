@@ -698,44 +698,48 @@ int main(int argc, char** argv){
     //Options Parsing Part
     po::options_description desc("Dozvoljene opcije programa");
     desc.add_options()
-        ("help", "Ispisuje poruku o upotrebi")
+        ("help", "Prints this message.")
         ("threads", po::value<int>(&threads)->default_value(1),
-                "Broj niti za obradu, podrazumevano 1")
+                "Number of threads to run. Defaults to 1.")
         ("inputPath,I", po::value<string>(&inputPath)->default_value("."),
-                "Gde su ulazne slike")
+                "A source directory. Where to find the images to augment.")
         ("outputPath,O", po::value<string>(&outputPath)->default_value("."),
-                "Gde idu slike koje se proizvedu?")
+                "A target directory. Where to store augmented images.")
         ("useDatasets",
-                "Da li da se pod-direktorijumi tretiraju kao da su unapred poznati dataSet-ovi")
+                "Predefined directory setup for retinal image datasets. DRIVE, STARE, and CHASE are supported.")
         ("copyUnchanged",
-                "Da li se slike koje se ne modifikuju kopiraju ili (podrazumevano) linkuju.")
+                "Should images for augmentation be copied or linked? Default: linked.")
         ("runOptions,R", po::value<RunOption>(&ropts),
-                "Koje modifikacije izvrsiti nad slikama. Ukoliko se eksplicitno ne zada, za sve slike iz "
-                "ulaznog direktorijuma ce biti izgenerisane slike sa primenom GAUSSIAN NOISE.")
+                "What transformations to apply on images. By default, all images from inputPath are augmented using "
+                "GAUSSIAN NOISE.")
         ("angles,A", po::value<vector<double>>(&angles)->multitoken(),
-                "Lista uglova koji se koriste za generisanje slika u custom motion blur rezimu.")
+                "A list of angles to be used for custom blur transformation. When using this option, options startAngle, "
+                "stepAngle, and stepAngle should be omitted.")
         ("startAngle", po::value<double>(&start_angle)->default_value(0),
-                "Pocetni ugao od kojeg se generisu uglovi za motion blur.")
+                "A start angle. Corresponds to the beginning of the kernel range.")
         ("endAngle", po::value<double>(&end_angle)->default_value(120),
-                "Maksimalna vrednost ugla za koji ce se generisati za motion blur.")
+                "An end angle. Corresponds to the end of the kernel range.")
         ("stepAngle", po::value<double>(&step_angle)->default_value(40),
-                "Ugao za koji ce se povecavati start_angle sve dok je manji ili jednak sa end_angle.")
+                "Step value that is used to iteratively increase startAngle value until endAngle is reached.")
         ("kernels", po::value<vector<int>>(&kernels)->multitoken(),
-                "Lista kernela odvojenih razmacima.")
+                "A list containing blur kernel sizes. E.g. [3, 5, 7] means that images will be blurred using kernels of "
+                "size 3, 5, and 7 respectively. When using this option, options startKernel, stepKernel, and endKernel "
+                "should be omitted.")
         ("startKernel", po::value<int>(&start_kernel)->default_value(3),
-                "Velicina startnog kernela.")
+                "A start kernel size. Corresponds to the beginning of the kernel range.")
         ("endKernel", po::value<int>(&end_kernel)->default_value(2),
-                "Velicina poslednjeg generisanog kernela.")
+                "An end kernel size. Corresponds to the end of the kernel range.")
         ("stepKernel", po::value<int>(&step_kernel)->default_value(29),
-                "Korak genenrisanja kernela.")
+                "Step value that is used to iteratively increase startKernel value until endKernel value is reached.")
         ("noiseDeviations", po::value<vector<double>>(&noise_devs)->multitoken(),
-                "Lista standardnih devijacija odvojenih razmacima.")
+                "A list of standard deviation values that are used for noise transformations. Values should be separated"
+                " by comma. When using this option, options startNoiseDev, endNoiseDev and stepNoiseDev should be omitted.")
         ("startNoiseDev", po::value<double>(&start_noise_dev)->default_value(2),
-                "Standardna devijacija od koje zapoceinje generisanje.")
+                "A start value of standard deviation. Corresponds to the beginning of the standard deviation range.")
         ("endNoiseDev", po::value<double>(&end_noise_dev)->default_value(2),
-                "Standardna devijacija na kojoj se zavrsava generisanje.")
+                "An end standard deviation value. Corresponds to the end of the standard deviation range.")
         ("stepNoiseDev", po::value<double>(&step_noise_dev)->default_value(10),
-                "Korak generisanja standardne devijacije.")
+                "Step value that is used to iteratively increase startNoiseDev value until endNoiseDev value is reached.")
     ;
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, desc), vm);
