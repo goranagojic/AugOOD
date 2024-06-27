@@ -10,16 +10,23 @@ Here you can see some examples of blurred images converted into gifs.
 <h3 style="text-align: center;">Gaussian blur (left) and motion blur - arbitrary angle (40°) (right)</h3>
 <figure style="display:flex">
     <div>
-        <img alt="Gaussian blur" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXI2andxNDl3aDg0emdla3Bjb3BlaGZ4M3EycW1kcTl6bDV0dHlqdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eY801QMNufzzM9PUaE/giphy.gif"/>
-        <img alt="Motion blur - angle" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjVwdWQybW5rM2ZwY2o5emdwcjN5ejUyOHJ5NTVodWp0cDIwMXhuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ennUQoPSo6gYSVJYce/giphy.gif"/>
+        <img alt="Gaussian blur" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXI2andxNDl3aDg0emdla3Bjb3BlaGZ4M3EycW1kcTl6bDV0dHlqdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eY801QMNufzzM9PUaE/giphy.gif" width="360"/>
+        <img alt="Motion blur - angle" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjVwdWQybW5rM2ZwY2o5emdwcjN5ejUyOHJ5NTVodWp0cDIwMXhuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ennUQoPSo6gYSVJYce/giphy.gif" width="360"/>
     </div>
 </figure>
+
+<!-- <figure style="display: flex; justify-content: center;">
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <img alt="Gaussian blur" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXI2andxNDl3aDg0emdla3Bjb3BlaGZ4M3EycW1kcTl6bDV0dHlqdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eY801QMNufzzM9PUaE/giphy.gif" style="max-width: 45%; flex: 1 1 45%; height: auto; object-fit: contain;" />
+        <img alt="Motion blur - angle" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjVwdWQybW5rM2ZwY2o5emdwcjN5ejUyOHJ5NTVodWp0cDIwMXhuNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ennUQoPSo6gYSVJYce/giphy.gif" style="max-width: 45%; flex: 1 1 45%; height: auto; object-fit: contain;" />
+    </div>
+</figure> -->
 
 <h3><center>Vertical motion blur (left) and horizontal motion blur (right)</center></h3>
 <figure style="display: flex">
     <div>
-        <img alt="Motion blur - vertical" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI3M3ZmcWd5cGF0YnhvOWx4OWNvdDV4aGN3c3RwYXh0cDk4d3Z1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hS9NsSlmja393Z5x4s/giphy.gif"/>
-        <img alt="Motion blur - horizontal" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW4wMTRpbzc2MWt3dTZjb3c1aXh3dDd2Y25uOG1mMGU3c2N4cjNkZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ca3Y9JVrzBFErRS3Rh/giphy.gif"/>
+        <img alt="Motion blur - vertical" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI3M3ZmcWd5cGF0YnhvOWx4OWNvdDV4aGN3c3RwYXh0cDk4d3Z1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hS9NsSlmja393Z5x4s/giphy.gif" width="360px"/>
+        <img alt="Motion blur - horizontal" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW4wMTRpbzc2MWt3dTZjb3c1aXh3dDd2Y25uOG1mMGU3c2N4cjNkZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ca3Y9JVrzBFErRS3Rh/giphy.gif" width="360px"/>
     </div>
 </figure>
 
